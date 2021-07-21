@@ -1,14 +1,15 @@
-import { createLogger, html } from "https://deno.land/x/surv@v0.2.3/mod.ts";
-import { cli } from "https://deno.land/x/surv@v0.2.3/cli.ts";
+import { createLogger, html } from "https://deno.land/x/surv@v0.2.5/mod.ts";
+import { cli } from "https://deno.land/x/surv@v0.2.5/cli.ts";
 
 if (import.meta.main) {
   await cli({
-    server: "https://deno.land/x/surv@v0.2.3/serve.ts",
+    tsconfig: "tsconfig.json",
+    server: "https://deno.land/x/surv@v0.2.5/serve.ts",
     build: [{
       cmd: ["deno", "run", "-A", "https://deno.land/x/edcb@v0.5.1/cli.ts"],
     }],
     modules: {
-      index: "./index.ts",
+      index: "./index.tsx",
     },
     pages: {
       index: html({
